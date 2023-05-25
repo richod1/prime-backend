@@ -23,6 +23,7 @@ module.exports.login = async (req, res) => {
     }
 
     // bcrypting the password and comparing with the one in db
+   
     if (await bcrypt.compare(password, user.password)) {
 
       const token = generateAuthToken({_id : user?._id, email : email})
